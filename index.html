@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace Cathedral — Where Faith Comes Alive</title>
+  <title>Zao Adona El — The Living Church</title>
 
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
@@ -17,223 +17,140 @@
 </head>
 
 <body>
-   
+
   <!-- ══════════════════════════════════════════
        NAVBAR
   ══════════════════════════════════════════ -->
   <nav id="navbar">
-    <div class="nav-logo">✦ Grace Cathedral</div>
+    <a href="#" class="nav-logo">
+      <span class="logo-line1">ZAO</span>
+      <span class="logo-line2">ADONA<br>EL</span>
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#sermons">Sermons</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">Home</a></li>
+      <li><a href="#beliefs">About</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="#beliefs">What We Believe</a></li>
     </ul>
 
-    <a href="#contact" class="nav-cta">Plan a Visit</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#about"    onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#beliefs"  onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#beliefs"  onclick="closeMobileMenu()">What We Believe</a></li>
+      <li><a href="#visit"    onclick="closeMobileMenu()">Plan a Visit</a></li>
+      <li><a href="#locations" onclick="closeMobileMenu()">Locations</a></li>
+    </ul>
+  </div>
 
 
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
   <section id="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span>ABOUT</span>
+        <span class="eyebrow-dot">·</span>
+        <span>BELIEFS</span>
+        <span class="eyebrow-dot">·</span>
+        <span>CALIFORNIA</span>
+      </div>
 
-    <div class="hero-content">
-      <span class="hero-cross">✝</span>
-      <p class="hero-tag">Welcome Home</p>
-      <h1 class="hero-title">Where <span>Faith</span><br>Comes Alive</h1>
+      <h1 class="hero-title">
+        THE<br>LIVING<br>CHURCH
+      </h1>
+
       <p class="hero-sub">
-        A community rooted in love, growing in grace,
-        and reaching the world with the hope of Christ.
+        A congregation devoted to the triune God and the redeeming blood of Yeshua the Messiah.
       </p>
+
       <div class="hero-buttons">
-        <a href="#services" class="btn-primary">Join Us Sunday</a>
-        <a href="#about"    class="btn-outline">Our Story</a>
+        <a href="#beliefs" class="btn-ghost">What We Believe</a>
+        <a href="#visit"   class="btn-solid">Plan a Visit</a>
       </div>
-    </div>
-
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      Scroll
     </div>
   </section>
 
 
   <!-- ══════════════════════════════════════════
-       SERVICES
-  ══════════════════════════════════════════ -->
-  <section id="services">
-    <span class="section-tag reveal">Gather With Us</span>
-    <h2 class="section-title reveal">Sunday Services</h2>
-    <div class="divider reveal"></div>
-    <p class="section-sub reveal">
-      All are welcome at every service. Come as you are — you belong here.
-    </p>
-
-    <div class="services-grid">
-
-      <div class="service-card reveal">
-        <span class="service-icon">🕊️</span>
-        <h3 class="service-title">Early Morning Worship</h3>
-        <p class="service-desc">
-          A quiet, reflective service perfect for those who love
-          the stillness of dawn communion with God.
-        </p>
-        <p class="service-time">Sundays · 7:30 AM</p>
-      </div>
-
-      <div class="service-card reveal">
-        <span class="service-icon">✨</span>
-        <h3 class="service-title">Main Celebration</h3>
-        <p class="service-desc">
-          Our vibrant flagship service with contemporary worship,
-          powerful preaching, and full children's ministry.
-        </p>
-        <p class="service-time">Sundays · 10:00 AM</p>
-      </div>
-
-      <div class="service-card reveal">
-        <span class="service-icon">🔥</span>
-        <h3 class="service-title">Evening Service</h3>
-        <p class="service-desc">
-          An intimate evening gathering with deep worship, prayer,
-          and community connection for all ages.
-        </p>
-        <p class="service-time">Sundays · 6:00 PM</p>
-      </div>
-
-      <div class="service-card reveal">
-        <span class="service-icon">📖</span>
-        <h3 class="service-title">Midweek Bible Study</h3>
-        <p class="service-desc">
-          Dive deeper into scripture with us every Wednesday.
-          All levels welcome — from new believers to seasoned students.
-        </p>
-        <p class="service-time">Wednesdays · 7:00 PM</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       ABOUT
+       MISSION STATEMENT
   ══════════════════════════════════════════ -->
   <section id="about">
-    <div class="about-grid">
-
-      <div class="about-visual reveal-left">
-        <div class="about-image">
-          <!-- Replace src with a real photo: images/church-building.jpg -->
-          <span class="about-image-inner">⛪</span>
-        </div>
-        <div class="about-badge">
-          <span class="about-badge-num">1968</span>
-          <span class="about-badge-txt">Est.</span>
-        </div>
-      </div>
-
-      <div class="about-text reveal-right">
-        <span class="section-tag">Our Story</span>
-        <h2 class="section-title">A Legacy of<br>Faith &amp; Love</h2>
-        <div class="divider"></div>
-
-        <p class="about-para">
-          Founded in 1968 by Pastor James &amp; Eleanor Harris, Grace Cathedral
-          began as a small congregation of 12 families meeting in a living room.
-          Today, we are a thriving church family of over 3,000 members, united
-          by one vision: to love God, love people, and transform our city.
-        </p>
-        <p class="about-para">
-          We believe the Church is not a building — it's a people. Every Sunday,
-          we gather to encounter the living God and scatter throughout the week
-          to be His hands and feet in our community.
-        </p>
-
-        <div class="about-features">
-          <div class="about-feature">Spirit-filled worship that moves hearts</div>
-          <div class="about-feature">Biblical preaching rooted in truth</div>
-          <div class="about-feature">Real community — not just attendance</div>
-          <div class="about-feature">Local &amp; global missions outreach</div>
-          <div class="about-feature">Ministries for every age and stage</div>
-        </div>
-      </div>
-
+    <div class="mission-inner">
+      <p class="eyebrow-label">WHO WE ARE</p>
+      <h2 class="mission-text">
+        We are a people made alive in the Messiah — gathered to worship the living God, grow in His Word, and serve our communities across three states.
+      </h2>
     </div>
   </section>
 
 
   <!-- ══════════════════════════════════════════
-       STATS
+       WHAT WE BELIEVE
   ══════════════════════════════════════════ -->
-  <section id="stats">
-    <div class="stats-grid">
-      <div class="reveal">
-        <div class="stat-num">3000+</div>
-        <div class="stat-label">Members</div>
-      </div>
-      <div class="reveal">
-        <div class="stat-num">56</div>
-        <div class="stat-label">Years of Ministry</div>
-      </div>
-      <div class="reveal">
-        <div class="stat-num">18</div>
-        <div class="stat-label">Missions Partners</div>
-      </div>
-      <div class="reveal">
-        <div class="stat-num">40+</div>
-        <div class="stat-label">Weekly Groups</div>
-      </div>
-    </div>
-  </section>
+  <section id="beliefs">
+    <div class="beliefs-inner">
 
-
-  <!-- ══════════════════════════════════════════
-       SERMONS
-  ══════════════════════════════════════════ -->
-  <section id="sermons">
-    <span class="section-tag reveal">The Word</span>
-    <h2 class="section-title reveal">Recent Sermons</h2>
-    <div class="divider reveal"></div>
-    <p class="section-sub reveal">
-      Wherever you are in your journey, God's Word meets you there.
-    </p>
-
-    <div class="sermons-grid">
-
-      <div class="sermon-card reveal">
-        <!-- Replace with: <img src="images/sermon-1.jpg" alt="..."> -->
-        <div class="sermon-thumb">🌊</div>
-        <div class="sermon-body">
-          <p class="sermon-date">June 15, 2026</p>
-          <h3 class="sermon-title">Walking on Water — Trust in the Storms of Life</h3>
-          <p class="sermon-pastor">Pastor Michael Harris</p>
+      <div class="beliefs-header">
+        <p class="eyebrow-label">FOUNDATIONS</p>
+        <div class="beliefs-title-row">
+          <h2 class="beliefs-title">What We<br>Believe</h2>
+          <a href="#" class="beliefs-link">Read our full statement →</a>
         </div>
       </div>
 
-      <div class="sermon-card reveal">
-        <div class="sermon-thumb">🌱</div>
-        <div class="sermon-body">
-          <p class="sermon-date">June 8, 2026</p>
-          <h3 class="sermon-title">Seeds of Faith — Growing Through the Wilderness</h3>
-          <p class="sermon-pastor">Pastor Sarah Okonkwo</p>
-        </div>
-      </div>
+      <div class="beliefs-list">
 
-      <div class="sermon-card reveal">
-        <div class="sermon-thumb">🕯️</div>
-        <div class="sermon-body">
-          <p class="sermon-date">June 1, 2026</p>
-          <h3 class="sermon-title">Let Your Light Shine — A Life of Holy Purpose</h3>
-          <p class="sermon-pastor">Pastor Michael Harris</p>
+        <div class="belief-item reveal">
+          <div class="belief-left">
+            <span class="belief-num">01</span>
+            <h3 class="belief-name">The Triune God</h3>
+          </div>
+          <p class="belief-desc">
+            One God eternally existing as Father, Son, and Holy Spirit — worshipped in unity and truth.
+          </p>
         </div>
-      </div>
 
+        <div class="belief-item reveal">
+          <div class="belief-left">
+            <span class="belief-num">02</span>
+            <h3 class="belief-name">The Blood of Yeshua</h3>
+          </div>
+          <p class="belief-desc">
+            Redemption and new life through the shed blood of Yeshua the Messiah — our salvation.
+          </p>
+        </div>
+
+        <div class="belief-item reveal">
+          <div class="belief-left">
+            <span class="belief-num">03</span>
+            <h3 class="belief-name">The Word of God</h3>
+          </div>
+          <p class="belief-desc">
+            Scripture as the living, authoritative foundation of all we teach and practice.
+          </p>
+        </div>
+
+        <div class="belief-item reveal">
+          <div class="belief-left">
+            <span class="belief-num">04</span>
+            <h3 class="belief-name">The Living Church</h3>
+          </div>
+          <p class="belief-desc">
+            A people called to worship, community, and service — the place we gather.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -242,167 +159,80 @@
        SCRIPTURE QUOTE
   ══════════════════════════════════════════ -->
   <section id="quote">
-    <p class="quote-text reveal">
-      "For I know the plans I have for you," declares the Lord,
-      "plans to prosper you and not to harm you,
-      plans to give you hope and a future."
-    </p>
-    <p class="quote-source reveal">— Jeremiah 29:11</p>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       EVENTS
-  ══════════════════════════════════════════ -->
-  <section id="events">
-    <span class="section-tag reveal">Community</span>
-    <h2 class="section-title reveal">Upcoming Events</h2>
-    <div class="divider reveal"></div>
-
-    <div class="events-list">
-
-      <div class="event-item reveal">
-        <div class="event-date">
-          <div class="event-day">29</div>
-          <div class="event-month">Jun</div>
-        </div>
-        <div>
-          <div class="event-name">Summer Youth Camp Kickoff</div>
-          <div class="event-detail">9:00 AM · Fellowship Hall · All teens welcome</div>
-        </div>
-        <span class="event-badge">Family</span>
-      </div>
-
-      <div class="event-item reveal">
-        <div class="event-date">
-          <div class="event-day">04</div>
-          <div class="event-month">Jul</div>
-        </div>
-        <div>
-          <div class="event-name">Community BBQ &amp; Outreach</div>
-          <div class="event-detail">12:00 PM · Church Lawn · Free for the neighborhood</div>
-        </div>
-        <span class="event-badge">Outreach</span>
-      </div>
-
-      <div class="event-item reveal">
-        <div class="event-date">
-          <div class="event-day">12</div>
-          <div class="event-month">Jul</div>
-        </div>
-        <div>
-          <div class="event-name">Marriage Enrichment Weekend</div>
-          <div class="event-detail">Fri 6 PM – Sat 9 PM · Main Sanctuary · Register required</div>
-        </div>
-        <span class="event-badge">Couples</span>
-      </div>
-
-      <div class="event-item reveal">
-        <div class="event-date">
-          <div class="event-day">20</div>
-          <div class="event-month">Jul</div>
-        </div>
-        <div>
-          <div class="event-name">Water Baptism Sunday</div>
-          <div class="event-detail">10:00 AM Service · Join us in celebrating new life</div>
-        </div>
-        <span class="event-badge">Worship</span>
-      </div>
-
-      <div class="event-item reveal">
-        <div class="event-date">
-          <div class="event-day">27</div>
-          <div class="event-month">Jul</div>
-        </div>
-        <div>
-          <div class="event-name">City Missions Prayer Night</div>
-          <div class="event-detail">7:00 PM · Chapel · Interceding for our city &amp; world</div>
-        </div>
-        <span class="event-badge">Prayer</span>
-      </div>
-
+    <div class="quote-inner">
+      <blockquote class="quote-text reveal">
+        "In Him was life, and the life was the light of men."
+      </blockquote>
+      <cite class="quote-ref reveal">John 1:4</cite>
     </div>
   </section>
 
 
   <!-- ══════════════════════════════════════════
-       CONTACT
+       LOCATIONS
   ══════════════════════════════════════════ -->
-  <section id="contact">
-    <span class="section-tag reveal">Get in Touch</span>
-    <h2 class="section-title reveal">We'd Love to Meet You</h2>
-    <div class="divider reveal"></div>
+  <section id="locations">
+    <div class="locations-inner">
 
-    <div class="contact-grid">
-
-      <div class="contact-info reveal-left">
-        <h3>Visit Us</h3>
-
-        <div class="contact-item">
-          <span class="contact-icon">📍</span>
-          <div>
-            <div class="contact-label">Address</div>
-            <div class="contact-val">1200 Cathedral Drive<br>Springfield, IL 62701</div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-icon">🕐</span>
-          <div>
-            <div class="contact-label">Sunday Services</div>
-            <div class="contact-val">7:30 AM · 10:00 AM · 6:00 PM</div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <div>
-            <div class="contact-label">Phone</div>
-            <div class="contact-val">(217) 555-0192</div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-val">hello@gracecathedral.org</div>
-          </div>
-        </div>
+      <div class="locations-header">
+        <p class="eyebrow-label">THREE STATES · ONE CHURCH</p>
+        <h2 class="locations-title">Find Us Near You</h2>
       </div>
 
-      <form class="contact-form reveal-right" onsubmit="return false;">
-        <div class="form-group">
-          <label class="form-label" for="name">Your Name</label>
-          <input
-            id="name"
-            type="text"
-            class="form-input"
-            placeholder="John Smith"
-            autocomplete="name"
-          >
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email Address</label>
-          <input
-            id="email"
-            type="email"
-            class="form-input"
-            placeholder="john@email.com"
-            autocomplete="email"
-          >
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea
-            id="message"
-            class="form-input"
-            placeholder="Tell us how we can help or pray for you..."
-          ></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
+      <div class="locations-grid">
 
+        <div class="location-card reveal">
+          <div class="location-thumb location-thumb--hawaii"></div>
+          <div class="location-body">
+            <h3 class="location-name">Hawaii</h3>
+            <p class="location-desc">
+              Island gatherings rooted in worship and the blood of Yeshua, serving local communities across three sites.
+            </p>
+            <a href="#" class="location-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="location-thumb location-thumb--arizona"></div>
+          <div class="location-body">
+            <h3 class="location-name">Arizona</h3>
+            <p class="location-desc">
+              It doesn't take long to find the blood of Yeshua working in the desert Southwest — come see.
+            </p>
+            <a href="#" class="location-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="location-thumb location-thumb--california"></div>
+          <div class="location-body">
+            <h3 class="location-name">California</h3>
+            <p class="location-desc">
+              A thriving community of believers growing in cities across the Golden State — neighbors serving neighbors.
+            </p>
+            <a href="#" class="location-link">Learn More →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PLAN YOUR VISIT CTA
+  ══════════════════════════════════════════ -->
+  <section id="visit">
+    <div class="visit-inner">
+      <p class="eyebrow-label eyebrow-label--light">YOU ARE WELCOME HERE</p>
+      <h2 class="visit-title">PLAN YOUR<br>VISIT</h2>
+      <p class="visit-sub">
+        Whether you're exploring faith for the first time or looking for a church home, we'd love to meet you. Reach out and we'll help you find your nearest gathering.
+      </p>
+      <div class="visit-buttons">
+        <a href="#locations" class="btn-solid">Get in Touch</a>
+        <a href="#beliefs"   class="btn-ghost">Learn About Us</a>
+      </div>
     </div>
   </section>
 
@@ -412,14 +242,42 @@
   ══════════════════════════════════════════ -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-logo">✝ Grace Cathedral</div>
-      <div class="footer-copy">© 2026 Grace Cathedral. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#sermons">Sermons</a>
-        <a href="#contact">Give</a>
-        <a href="#contact">Prayer</a>
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-line1">ZAO</span>
+          <span class="logo-line2">ADONA<br>EL</span>
+        </div>
+        <p class="footer-tagline">
+          A congregation devoted to the triune God and the redeeming blood of Yeshua the Messiah. Serving Hawaii, Arizona, and California.
+        </p>
       </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">SITEMAP</p>
+          <ul>
+            <li><a href="#about">Home</a></li>
+            <li><a href="#beliefs">About</a></li>
+            <li><a href="#beliefs">What We Believe</a></li>
+            <li><a href="#locations">Locations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">CONTACT</p>
+          <ul>
+            <li><a href="mailto:hello@zaoadonael.org">hello@zaoadonael.org</a></li>
+            <li><a href="#locations">Hawaii</a></li>
+            <li><a href="#locations">Arizona</a></li>
+            <li><a href="#locations">California</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Zao Adona El. All rights reserved.</p>
     </div>
   </footer>
 
