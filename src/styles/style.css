@@ -84,32 +84,6 @@ nav.scrolled {
 .logo-mark {
   height: 36px;
   width: auto;
-  margin-right: 0.4rem;
-}
-
-.nav-logo .logo-line1 {
-  font-size: 1.9rem;
-}
-
-.nav-logo .logo-line2 {
-  font-size: 0.72rem;
-}
-
-.logo-line1 {
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--white);
-  letter-spacing: 0.04em;
-}
-
-.logo-line2 {
-  font-family: var(--font-head);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--white-dim);
-  letter-spacing: 0.12em;
-  line-height: 1.1;
 }
 
 /* Nav links */
