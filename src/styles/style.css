@@ -288,10 +288,6 @@ nav.scrolled {
   color: var(--white-faint);
 }
 
-.eyebrow-dot {
-  color: var(--orange) !important;
-}
-
 .hero-title {
   font-family: 'Google Sans', sans-serif;
   font-size: 45px;
