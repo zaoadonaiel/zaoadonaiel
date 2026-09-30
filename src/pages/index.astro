@@ -1,6 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const navLinks = [
+  { href: '#hero',      label: 'Home' },
+  { href: '#about',     label: 'About' },
+  { href: '#beliefs',   label: 'What We Believe' },
+  { href: '#locations', label: 'Locations' },
+];
+
 const beliefs = [
   {
     name: 'The Triune God',
@@ -23,21 +30,25 @@ const beliefs = [
 const locations = [
   {
     slug: 'hawaii',
+    image: 'https://images.unsplash.com/photo-1598135753163-6167c1a1ad65',
     name: 'Hawaii',
     desc: 'Island gatherings rooted in worship and the blood of Yeshua, serving local communities across three sites.',
   },
   {
     slug: 'arizona',
+    image: 'https://images.unsplash.com/photo-1589046207215-b5ee3097bafc',
     name: 'Arizona',
     desc: "It doesn't take long to find the blood of Yeshua working in the desert Southwest — come see.",
   },
   {
     slug: 'california',
+    image: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29',
     name: 'California',
     desc: 'A thriving community of believers growing in cities across the Golden State — neighbors serving neighbors.',
   },
   {
     slug: 'puerto-rico',
+    image: 'https://images.unsplash.com/photo-1579687196544-08ae57ab5c11',
     name: 'Puerto Rico',
     desc: 'A Caribbean family of believers gathered under the blood of Yeshua — worshiping and serving across the island.',
   },
@@ -50,32 +61,34 @@ const locations = [
        NAVBAR
   ══════════════════════════════════════════ -->
   <nav id="navbar">
-    <a href="#" class="nav-logo">
-      <span class="logo-line1">ZAO</span>
-      <span class="logo-line2">ADONA<br>EL</span>
-    </a>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-line1">ZAO</span>
+        <span class="logo-line2">ADONA<br>EL</span>
+      </a>
 
-    <ul class="nav-links">
-      <li><a href="#about">Home</a></li>
-      <li><a href="#beliefs">About</a></li>
-      <li class="nav-divider"></li>
-      <li><a href="#beliefs">What We Believe</a></li>
-    </ul>
+      <ul class="nav-links">
+        {navLinks.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
 
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+      <a href="#visit" class="btn-solid nav-cta">Plan a Visit</a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
     <ul>
-      <li><a href="#about">Home</a></li>
-      <li><a href="#beliefs">About</a></li>
-      <li><a href="#beliefs">What We Believe</a></li>
+      {navLinks.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
       <li><a href="#visit">Plan a Visit</a></li>
-      <li><a href="#locations">Locations</a></li>
     </ul>
   </div>
 
@@ -178,7 +191,14 @@ const locations = [
       <div class="locations-grid">
         {locations.map((location) => (
           <div class="location-card reveal">
-            <div class={`location-thumb location-thumb--${location.slug}`}></div>
+            <div class="location-thumb">
+              <img
+                src={`${location.image}?auto=format&fit=crop&w=800&q=75`}
+                alt={`${location.name} landscape`}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div class="location-body">
               <h3 class="location-name">{location.name}</h3>
               <p class="location-desc">{location.desc}</p>
