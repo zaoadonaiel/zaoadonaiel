@@ -81,6 +81,12 @@ nav.scrolled {
   line-height: 1;
 }
 
+.logo-mark {
+  height: 36px;
+  width: auto;
+  margin-right: 0.4rem;
+}
+
 .nav-logo .logo-line1 {
   font-size: 1.9rem;
 }
@@ -693,7 +699,7 @@ footer {
 
 .footer-logo {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.25rem;
   margin-bottom: 1rem;
 }
