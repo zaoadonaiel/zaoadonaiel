@@ -28,6 +28,9 @@ function closeMobileMenu() {
   hamburger.addEventListener('click', () => menu.classList.add('open'));
   closeBtn.addEventListener('click',  closeMobileMenu);
 
+  // Close when a menu link is tapped
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+
   // Close on backdrop click
   menu.addEventListener('click', (e) => {
     if (e.target === menu) closeMobileMenu();
