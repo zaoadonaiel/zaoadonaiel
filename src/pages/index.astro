@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroData    from '../content/site/hero.json';
+import aboutData   from '../content/site/about.json';
+import beliefsData from '../content/site/beliefs.json';
+import quoteData   from '../content/site/quote.json';
+import locData     from '../content/site/locations.json';
+import visitData   from '../content/site/visit.json';
+import footerData  from '../content/site/footer.json';
 
 const navLinks = [
   { href: '#hero',      label: 'Home' },
@@ -8,51 +15,8 @@ const navLinks = [
   { href: '#locations', label: 'Locations' },
 ];
 
-const beliefs = [
-  {
-    name: 'The Triune God',
-    desc: 'One God eternally existing as Father, Son, and Holy Spirit — worshipped in unity and truth.',
-  },
-  {
-    name: 'The Blood of Yeshua',
-    desc: 'Redemption and new life through the shed blood of Yeshua the Messiah — our salvation.',
-  },
-  {
-    name: 'The Word of God',
-    desc: 'Scripture as the living, authoritative foundation of all we teach and practice.',
-  },
-  {
-    name: 'The Living Church',
-    desc: 'A people called to worship, community, and service — the place we gather.',
-  },
-];
-
-const locations = [
-  {
-    slug: 'hawaii',
-    image: 'https://images.unsplash.com/photo-1598135753163-6167c1a1ad65',
-    name: 'Hawaii',
-    desc: 'Island gatherings rooted in worship and the blood of Yeshua, serving local communities across three sites.',
-  },
-  {
-    slug: 'arizona',
-    image: 'https://images.unsplash.com/photo-1589046207215-b5ee3097bafc',
-    name: 'Arizona',
-    desc: "It doesn't take long to find the blood of Yeshua working in the desert Southwest — come see.",
-  },
-  {
-    slug: 'california',
-    image: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29',
-    name: 'California',
-    desc: 'A thriving community of believers growing in cities across the Golden State — neighbors serving neighbors.',
-  },
-  {
-    slug: 'puerto-rico',
-    image: 'https://images.unsplash.com/photo-1579687196544-08ae57ab5c11',
-    name: 'Puerto Rico',
-    desc: 'A Caribbean family of believers gathered under the blood of Yeshua — worshiping and serving across the island.',
-  },
-];
+const heroTitle  = heroData.title.split('\n');
+const visitTitle = visitData.title.split('\n');
 ---
 
 <Layout>
@@ -72,7 +36,7 @@ const locations = [
         ))}
       </ul>
 
-      <a href="#visit" class="btn-solid nav-cta">Plan a Visit</a>
+      <a href="#visit" class="btn-solid nav-cta">{heroData.cta_primary_label}</a>
 
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -87,7 +51,7 @@ const locations = [
       {navLinks.map((link) => (
         <li><a href={link.href}>{link.label}</a></li>
       ))}
-      <li><a href="#visit">Plan a Visit</a></li>
+      <li><a href="#visit">{heroData.cta_primary_label}</a></li>
     </ul>
   </div>
 
@@ -100,20 +64,20 @@ const locations = [
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">
-        <span>Matthew 28:19</span>
+        <span>{heroData.eyebrow}</span>
       </div>
 
       <h1 class="hero-title">
-        THE<br>LIVING<br>CHURCH
+        {heroTitle.map((line, i) => (
+          <>{line}{i < heroTitle.length - 1 && <br />}</>
+        ))}
       </h1>
 
-      <p class="hero-sub">
-        A congregation devoted to the triune God and the redeeming blood of Yeshua the Messiah.
-      </p>
+      <p class="hero-sub">{heroData.subtitle}</p>
 
       <div class="hero-buttons">
-        <a href="#beliefs" class="btn-ghost">What We Believe</a>
-        <a href="#visit"   class="btn-solid">Plan a Visit</a>
+        <a href={heroData.cta_secondary_href} class="btn-ghost">{heroData.cta_secondary_label}</a>
+        <a href={heroData.cta_primary_href}   class="btn-solid">{heroData.cta_primary_label}</a>
       </div>
     </div>
   </section>
@@ -124,10 +88,8 @@ const locations = [
   ══════════════════════════════════════════ -->
   <section id="about">
     <div class="mission-inner">
-      <p class="eyebrow-label">WHO WE ARE</p>
-      <h2 class="mission-text">
-        We are a people made alive in the Messiah — gathered to worship the living God, grow in His Word, and serve our communities across four locations.
-      </h2>
+      <p class="eyebrow-label">{aboutData.eyebrow}</p>
+      <h2 class="mission-text">{aboutData.text}</h2>
     </div>
   </section>
 
@@ -139,15 +101,15 @@ const locations = [
     <div class="beliefs-inner">
 
       <div class="beliefs-header">
-        <p class="eyebrow-label">FOUNDATIONS</p>
+        <p class="eyebrow-label">{beliefsData.eyebrow}</p>
         <div class="beliefs-title-row">
-          <h2 class="beliefs-title">What We<br>Believe</h2>
-          <a href="#" class="beliefs-link">Read our full statement →</a>
+          <h2 class="beliefs-title">{beliefsData.title.replace('\\n', '\n').split('\n').map((l, i, a) => <>{l}{i < a.length - 1 && <br />}</>)}</h2>
+          <a href={beliefsData.link_href} class="beliefs-link">{beliefsData.link_label}</a>
         </div>
       </div>
 
       <div class="beliefs-list">
-        {beliefs.map((belief, i) => (
+        {beliefsData.items.map((belief, i) => (
           <div class="belief-item reveal">
             <div class="belief-left">
               <span class="belief-num">{String(i + 1).padStart(2, '0')}</span>
@@ -166,10 +128,8 @@ const locations = [
   ══════════════════════════════════════════ -->
   <section id="quote">
     <div class="quote-inner">
-      <blockquote class="quote-text reveal">
-        "In Him was life, and the life was the light of men."
-      </blockquote>
-      <cite class="quote-ref reveal">John 1:4</cite>
+      <blockquote class="quote-text reveal">"{quoteData.text}"</blockquote>
+      <cite class="quote-ref reveal">{quoteData.reference}</cite>
     </div>
   </section>
 
@@ -181,12 +141,12 @@ const locations = [
     <div class="locations-inner">
 
       <div class="locations-header">
-        <p class="eyebrow-label">FOUR LOCATIONS · ONE CHURCH</p>
-        <h2 class="locations-title">Find Us Near You</h2>
+        <p class="eyebrow-label">{locData.eyebrow}</p>
+        <h2 class="locations-title">{locData.title}</h2>
       </div>
 
       <div class="locations-grid">
-        {locations.map((location) => (
+        {locData.items.map((location) => (
           <div class="location-card reveal">
             <div class="location-thumb">
               <img
@@ -213,14 +173,16 @@ const locations = [
   ══════════════════════════════════════════ -->
   <section id="visit">
     <div class="visit-inner">
-      <p class="eyebrow-label eyebrow-label--light">YOU ARE WELCOME HERE</p>
-      <h2 class="visit-title">PLAN YOUR<br>VISIT</h2>
-      <p class="visit-sub">
-        Whether you're exploring faith for the first time or looking for a church home, we'd love to meet you. Reach out and we'll help you find your nearest gathering.
-      </p>
+      <p class="eyebrow-label eyebrow-label--light">{visitData.eyebrow}</p>
+      <h2 class="visit-title">
+        {visitTitle.map((line, i) => (
+          <>{line}{i < visitTitle.length - 1 && <br />}</>
+        ))}
+      </h2>
+      <p class="visit-sub">{visitData.subtitle}</p>
       <div class="visit-buttons">
-        <a href="#locations" class="btn-solid">Get in Touch</a>
-        <a href="#beliefs"   class="btn-ghost">Learn About Us</a>
+        <a href={visitData.cta_primary_href}   class="btn-solid">{visitData.cta_primary_label}</a>
+        <a href={visitData.cta_secondary_href} class="btn-ghost">{visitData.cta_secondary_label}</a>
       </div>
     </div>
   </section>
@@ -236,9 +198,7 @@ const locations = [
         <div class="footer-logo">
           <img src="/logo-white.png" alt="Zao Adona El" class="logo-mark">
         </div>
-        <p class="footer-tagline">
-          A congregation devoted to the triune God and the redeeming blood of Yeshua the Messiah. Serving Hawaii, Arizona, California, and Puerto Rico.
-        </p>
+        <p class="footer-tagline">{footerData.tagline}</p>
       </div>
 
       <div class="footer-cols">
@@ -254,11 +214,10 @@ const locations = [
         <div class="footer-col">
           <p class="footer-col-title">CONTACT</p>
           <ul>
-            <li><a href="mailto:hello@zaoadonael.org">hello@zaoadonael.org</a></li>
-            <li><a href="#locations">Hawaii</a></li>
-            <li><a href="#locations">Arizona</a></li>
-            <li><a href="#locations">California</a></li>
-            <li><a href="#locations">Puerto Rico</a></li>
+            <li><a href={`mailto:${footerData.contact_email}`}>{footerData.contact_email}</a></li>
+            {locData.items.map((loc) => (
+              <li><a href="#locations">{loc.name}</a></li>
+            ))}
           </ul>
         </div>
       </div>
@@ -266,7 +225,7 @@ const locations = [
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Zao Adona El. All rights reserved. · Built with Astro</p>
+      <p>{footerData.copyright} · Built with Astro</p>
     </div>
   </footer>
 

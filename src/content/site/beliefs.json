@@ -1,0 +1,24 @@
+{
+  "eyebrow": "FOUNDATIONS",
+  "title": "What We Believe",
+  "link_label": "Read our full statement →",
+  "link_href": "#",
+  "items": [
+    {
+      "name": "The Triune God",
+      "desc": "One God eternally existing as Father, Son, and Holy Spirit — worshipped in unity and truth."
+    },
+    {
+      "name": "The Blood of Yeshua",
+      "desc": "Redemption and new life through the shed blood of Yeshua the Messiah — our salvation."
+    },
+    {
+      "name": "The Word of God",
+      "desc": "Scripture as the living, authoritative foundation of all we teach and practice."
+    },
+    {
+      "name": "The Living Church",
+      "desc": "A people called to worship, community, and service — the place we gather."
+    }
+  ]
+}

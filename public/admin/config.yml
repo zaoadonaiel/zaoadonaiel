@@ -1,0 +1,106 @@
+backend:
+  name: github
+  repo: zaoadonaiel/zaoadonaiel
+  branch: main
+  base_url: https://sveltia-cms-auth.zaoadonaiel.workers.dev
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: hero
+    label: Hero Section
+    files:
+      - name: hero
+        label: Hero
+        file: src/content/site/hero.json
+        fields:
+          - { label: Eyebrow Text, name: eyebrow, widget: string }
+          - { label: Title (use \n for line breaks), name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: text }
+          - { label: Primary Button Label, name: cta_primary_label, widget: string }
+          - { label: Primary Button Link, name: cta_primary_href, widget: string }
+          - { label: Secondary Button Label, name: cta_secondary_label, widget: string }
+          - { label: Secondary Button Link, name: cta_secondary_href, widget: string }
+
+  - name: about
+    label: About Section
+    files:
+      - name: about
+        label: About / Mission Statement
+        file: src/content/site/about.json
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Mission Text, name: text, widget: text }
+
+  - name: beliefs
+    label: What We Believe
+    files:
+      - name: beliefs
+        label: Beliefs Section
+        file: src/content/site/beliefs.json
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Section Title, name: title, widget: string }
+          - { label: Link Label, name: link_label, widget: string }
+          - { label: Link URL, name: link_href, widget: string }
+          - label: Belief Items
+            name: items
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: desc, widget: text }
+
+  - name: quote
+    label: Scripture Quote
+    files:
+      - name: quote
+        label: Scripture Quote
+        file: src/content/site/quote.json
+        fields:
+          - { label: Quote Text, name: text, widget: text }
+          - { label: Reference, name: reference, widget: string }
+
+  - name: locations
+    label: Locations
+    files:
+      - name: locations
+        label: Locations Section
+        file: src/content/site/locations.json
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Section Title, name: title, widget: string }
+          - label: Location Cards
+            name: items
+            widget: list
+            fields:
+              - { label: Slug (URL-friendly, e.g. hawaii), name: slug, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Image URL, name: image, widget: string }
+              - { label: Description, name: desc, widget: text }
+
+  - name: visit
+    label: Plan a Visit Section
+    files:
+      - name: visit
+        label: Visit CTA
+        file: src/content/site/visit.json
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Title (use \n for line breaks), name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: text }
+          - { label: Primary Button Label, name: cta_primary_label, widget: string }
+          - { label: Primary Button Link, name: cta_primary_href, widget: string }
+          - { label: Secondary Button Label, name: cta_secondary_label, widget: string }
+          - { label: Secondary Button Link, name: cta_secondary_href, widget: string }
+
+  - name: footer
+    label: Footer
+    files:
+      - name: footer
+        label: Footer
+        file: src/content/site/footer.json
+        fields:
+          - { label: Tagline, name: tagline, widget: text }
+          - { label: Contact Email, name: contact_email, widget: string }
+          - { label: Copyright Text, name: copyright, widget: string }
