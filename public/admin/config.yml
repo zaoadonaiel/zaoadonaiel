@@ -2,7 +2,7 @@ backend:
   name: github
   repo: zaoadonaiel/zaoadonaiel
   branch: main
-  base_url: https://sveltia-cms-auth.zaoadonaiel.workers.dev
+  base_url: https://sveltia-cms-auth.zaoadonaiel.com
 
 media_folder: public/uploads
 public_folder: /uploads
